@@ -7,11 +7,16 @@
 package com.example.dream_spring.controller;
 
 import com.example.dream_spring.model.Data;
+import com.example.dream_spring.model.getUser;
 import com.example.dream_spring.service.DataService;
+import com.sun.tools.javac.util.List;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Api(tags="API接口")
 @RestController
@@ -48,5 +53,52 @@ public class DataController {
     public void deleteUser(@PathVariable int id) {
 
         dataService.delete(id);
+    }
+
+
+
+    //以下为新添加接口
+    //
+    //
+    @ApiOperation("上传信息接口")
+    @PostMapping("/Add/{str}")
+    public String Add(HttpServletRequest request, HttpServletResponse response, @PathVariable String str) {
+
+        return dataService.Add(request, response, str);
+    }
+
+    @ApiOperation("查询点赞数前50名的信息")
+    @GetMapping("/findByLikes")
+    public List<getUser> findByLikes() {
+
+        return dataService.findByLikes();
+    }
+
+    @ApiOperation("查询最新的50条信息")
+    @GetMapping("/findByTime")
+    public List<getUser> findByTime() {
+
+        return dataService.findByTime();
+    }
+
+    @ApiOperation("查询随机的50条信息")
+    @GetMapping("/findByRand")
+    public List<getUser> findByRand() {
+
+        return dataService.findByRand();
+    }
+
+    @ApiOperation("更新指定id对应的点赞数+1")
+    @PutMapping("/updateLikes/{id}")
+    public String updateLikes(@PathVariable int id) {
+
+        return dataService.updateLikes(id);
+    }
+
+    @ApiOperation("更新指定id对应的点赞数-1")
+    @PutMapping("/updateLikesJ/{id}")
+    public String updateLikesJ(@PathVariable int id) {
+
+        return dataService.updateLikesJ(id);
     }
 }
