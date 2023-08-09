@@ -4,7 +4,6 @@ import com.example.dream_spring.model.Data;
 import com.example.dream_spring.service.DataService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
