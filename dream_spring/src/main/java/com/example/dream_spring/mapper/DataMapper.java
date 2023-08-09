@@ -1,6 +1,13 @@
+/**
+ * mapper 层：
+ * 数据持久层，也被称为 dao 层
+ * 作用是访问数据库，向数据库发送 sql 语句，完成数据的增删改查任务
+ */
 package com.example.dream_spring.mapper;
 
 import com.example.dream_spring.model.Data;
+import com.example.dream_spring.model.getUser;
+import com.sun.tools.javac.util.List;
 import org.apache.ibatis.annotations.*;
 
 @Mapper
@@ -61,5 +68,67 @@ public interface DataMapper {
      */
     @Delete("delete from dream where id =#{id}")
     void delete(int id);
+
+    // 以下是添加功能
+    //
+    //
+    //
+    /**
+     * 查询点赞数前50名的信息
+     *
+     * @return
+     */
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "province", column = "province"),
+            @Result(property = "str", column = "str"),
+            @Result(property = "likes", column = "likes")
+    })
+    @Select("select * from dream order by likes desc limit 50")
+    List<getUser> findByLikes();
+
+    /**
+     * 查询最新的50条信息
+     *
+     * @return
+     */
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "province", column = "province"),
+            @Result(property = "str", column = "str"),
+            @Result(property = "likes", column = "likes")
+    })
+    @Select("select * from dream order by time desc limit 50")
+    List<getUser> findByTime();
+
+    /**
+     * 查询随机的50条信息
+     *
+     * @return
+     */
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "province", column = "province"),
+            @Result(property = "str", column = "str"),
+            @Result(property = "likes", column = "likes")
+    })
+    @Select("select * from dream order by rand() limit 50")
+    List<getUser> findByRand();
+
+    /**
+     * 更新指定id的点赞数+1
+     *
+     * @param id
+     */
+    @Update("update dream set likes=likes+1 where id=#{id}")
+    void updateLikes(int id);
+
+    /**
+     * 更新指定id的点赞数-1
+     *
+     * @param id
+     */
+    @Update("update dream set likes=likes-1 where id=#{id}")
+    void updateLikesJ(int id);
 
 }

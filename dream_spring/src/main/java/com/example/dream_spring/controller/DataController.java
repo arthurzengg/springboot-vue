@@ -1,3 +1,9 @@
+/**
+ * controller 层：
+ * 控制层
+ * 作用是请求和响应控制
+ * 负责前后端交互，接受前端请求，调用 service 层，接收 service 层返回的数据，最后返回具体的页面和数据到客户端
+ */
 package com.example.dream_spring.controller;
 
 import com.example.dream_spring.model.Data;

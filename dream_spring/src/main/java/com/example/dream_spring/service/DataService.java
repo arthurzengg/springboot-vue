@@ -1,3 +1,9 @@
+/**
+ * service 层：
+ * 业务逻辑层
+ * 作用是完成功能设计
+ * 调用 mapper 层接口，接收 mapper 层返回的数据，完成项目的基本功能设计
+ */
 package com.example.dream_spring.service;
 
 import com.example.dream_spring.mapper.DataMapper;
