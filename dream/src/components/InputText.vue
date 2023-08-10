@@ -26,7 +26,7 @@ export default {
             if (this.isAnimating) return;
 
             //向服务器发送发送post请求
-            axios.post(`http://(接口IP地址):8087/Add/${this.inputValue}`)
+            axios.post(`http://localhost:8087/Add/${this.inputValue}`)
                 .then(res => {
 
                     console.log(res.data);

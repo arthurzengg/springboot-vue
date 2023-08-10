@@ -85,10 +85,10 @@ body::-webkit-scrollbar-thumb {
   font-size: 13px;
 }
 
-@font-face {
-  font-family: pyt; //自定义字体名称
-  src: url("../src/assets/拼音体_百彦子烨.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: pyt; //自定义字体名称
+//   src: url("../src/assets/拼音体_百彦子烨.ttf");
+//   font-weight: normal;
+//   font-style: normal;
+// }
 </style>
