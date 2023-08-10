@@ -5,16 +5,16 @@
  * 调用 mapper 层接口，接收 mapper 层返回的数据，完成项目的基本功能设计
  */
 package com.example.dream_spring.service;
-
 import com.example.dream_spring.mapper.DataMapper;
 import com.example.dream_spring.model.Data;
 import com.example.dream_spring.model.getUser;
-import com.sun.tools.javac.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Service
 public class DataService {

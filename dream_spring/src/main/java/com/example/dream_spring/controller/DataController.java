@@ -9,7 +9,6 @@ package com.example.dream_spring.controller;
 import com.example.dream_spring.model.Data;
 import com.example.dream_spring.model.getUser;
 import com.example.dream_spring.service.DataService;
-import com.sun.tools.javac.util.List;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Api(tags="API接口")
 @RestController

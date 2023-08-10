@@ -7,8 +7,11 @@ package com.example.dream_spring.mapper;
 
 import com.example.dream_spring.model.Data;
 import com.example.dream_spring.model.getUser;
-import com.sun.tools.javac.util.List;
+
+
 import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface DataMapper {
